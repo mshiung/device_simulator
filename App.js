@@ -1,21 +1,17 @@
-import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import React, { Component } from "react";
+import { Image } from "react-native";
 
-export default class App extends React.Component {
+const splashscreen = require("./assets/unifai-tm-logo_white_small.png");
+
+export default class SplashPage extends Component {
   render() {
+    // eslint-disable-line class-methods-use-this
     return (
-      <View style={styles.container}>
-        <Text>Open up App.js to start working on your app!</Text>
-      </View>
+      <Image source={{uri: 'asset:/app_icon.png'}} style={{width: 40, height: 40}} />
+      <Image
+        source={splashscreen}
+        style={{ flex: 1, height: null, width: null }}
+      />
     );
   }
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
