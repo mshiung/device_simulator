@@ -1,17 +1,30 @@
 import React, { Component } from "react";
-import { Image } from "react-native";
+import { StyleSheet, View, Image } from "react-native";
 
 const splashscreen = require("./assets/unifai-tm-logo_white_small.png");
 
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: 'column',
+    justifyContent: 'center',
+    alignItems: 'center',
+    height: '100%',
+  },
+  logo: { 
+    width: 200,
+    height: 100,
+  },
+});
+
 export default class SplashPage extends Component {
+
   render() {
-    // eslint-disable-line class-methods-use-this
     return (
-      <Image source={{uri: 'asset:/app_icon.png'}} style={{width: 40, height: 40}} />
-      <Image
-        source={splashscreen}
-        style={{ flex: 1, height: null, width: null }}
-      />
+      <View style={styles.container}>
+        <Image 
+          style={styles.logo}
+          source={splashscreen}/>
+      </View>
     );
   }
 }
